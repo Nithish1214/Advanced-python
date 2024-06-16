@@ -1,29 +1,27 @@
-from abc import ABC,abstractmethod
+import matplotlib.pyplot as plt
 
 
-class Demo(ABC):
+labels=['java','python','c++','C','C#']
 
-    @abstractmethod
-    def demo_function(self):
-        pass
+#to create pie chart
+per=[25,25,25,0,25]
+plt.pie(per,labels=labels,autopct='%1.1f%%',startangle=150)
+plt.show()
 
+#to create bar graph
+util=[1,2,3,4,5]
 
-class Child(Demo):
+plt.bar(labels,util)
+plt.xlabel('usage') 
+plt.ylabel('language')
+plt.title('data')
+plt.show()
 
-    def demo_function(self):
-        print('hello world')
-
-    def fun(self,a:int):
-        print('hello python')
-        
-    
-# d=Demo()
-c= Child()
-c.demo_function()
-x=[c]
-
-# d.demo_function()
-# c.demo_function()
+#to create graph
+x=[1,2,3,4,5]
+y=[2,1,4,5,6]
 
 
+plt.plot(x,y,marker='o',linestyle='--')
+plt.show()
 
